@@ -12,7 +12,17 @@
 */
 
 class Todo {
+  Todo() {
+    this.List = [];
+    this.index = 1;
+  }
 
+  add(task) {
+    this.List.push(task);
+    this.index++;
+  }
+
+  remove(index) {}
 }
 
 module.exports = Todo;

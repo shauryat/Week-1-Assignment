@@ -5,9 +5,22 @@
   Once you've implemented the logic, test your code by running
   - `npm run test-palindrome`
 */
+function transformString(str) {
+  // Convert the string to lowercase
+  let transformedStr = str.toLowerCase();
+
+  // Remove special characters and white spaces using regular expressions
+  transformedStr = transformedStr.replace(/[^a-zA-Z0-9]/g, "");
+
+  return transformedStr;
+}
 
 function isPalindrome(str) {
-  return true;
+  const final = transformString(str);
+
+  const _str = final.split("").reverse().join("");
+
+  return final === _str;
 }
 
 module.exports = isPalindrome;
