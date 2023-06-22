@@ -6,17 +6,34 @@
  */
 
 function waitOneSecond() {
-
+  console.log("1st function is running");
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(waitTwoSeconds()), 1000);
+  });
 }
 
-function waitTwoSecond() {
-
+function waitTwoSeconds() {
+  console.log("2nd function is running");
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(waitThreeSeconds()), 2000);
+  });
 }
 
-function waitThreeSecond() {
-
+function waitThreeSeconds() {
+  console.log("3rd Function is running");
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(), 3000);
+  });
 }
 
 function calculateTime() {
+  var start = Date.now();
+  waitOneSecond().then(() => {
+    var diff = Date.now() - start;
+    diff = diff / 1000;
 
+    console.log(`Promise chaining ending after ${diff} seconds`);
+  });
 }
+
+calculateTime();

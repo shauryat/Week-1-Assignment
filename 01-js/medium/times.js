@@ -7,6 +7,25 @@ Try running it for
 Hint - use Date class exposed in JS
 */
 
-function calculateTime(n) {
-    return 0.01;
+function sum(n) {
+  let ans = 0;
+
+  for (let i = 1; i <= n; i++) ans += i;
+  return ans;
 }
+
+function timeTaken(n, callFn) {
+  let start = Date.now();
+  sum(n);
+  let timeTaken = Date.now() - start; // ans in milliseconds
+  timeTaken = timeTaken / 1000;
+
+  return timeTaken;
+}
+function calculateTime(n) {
+  console.log(timeTaken(100, sum));
+  console.log(timeTaken(100000, sum));
+  console.log(timeTaken(1000000000, sum));
+}
+
+calculateTime();
