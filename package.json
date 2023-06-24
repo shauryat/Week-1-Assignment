@@ -4,12 +4,14 @@
   "description": "IDK",
   "main": "index.js",
   "scripts": {
-    "test-anagram": "npx jest ./01-js/tests/anagram.test.js",
-    "test-expenditure-analysis": "npx jest ./01-js/tests/expenditure-analysis.test.js",
-    "test-palindrome": "npx jest ./01-js/tests/palindrome.test.js",
-    "test-calculator": "npx jest ./tests/calculator.test.js",
-    "test-duplicate-transactions": "npx jest ./tests/duplicate-transactions.test.js",
-    "test-todo-list": "npx jest ./tests/todo-list.test.js",
+    "built": "npx tsc",
+    "anagram": "npx ts-node-dev --respawn /src/01-js/easy/anagram.ts",
+    "test-anagram": "npx jest ./tests/anagram.test.js",
+    "test-expenditure-analysis": "npx jest ./tests/expenditure-analysis.test.js",
+    "test-palindrome": "npx jest ./tests/palindrome.test.js",
+    "test-calculator": "npx jest tests/calculator.test.js",
+    "test-duplicate-transactions": "npx jest tests/duplicate-transactions.test.js",
+    "test-todo-list": "npx jest tests/todo-list.test.js",
     "test-all": "npx jest ./tests/"
   },
   "repository": {
@@ -21,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/100xDevs-hkirat/Week-1-assignment/issues"
   },
-  "homepage": "https://github.com/100xDevs-hkirat/Week-1-assignment#readme"
+  "homepage": "https://github.com/100xDevs-hkirat/Week-1-assignment#readme",
+  "dependencies": {
+    "typescript": "^5.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.1",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0"
+  }
 }

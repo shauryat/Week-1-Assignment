@@ -7,14 +7,19 @@
   Once you've implemented the logic, test your code by running
   - `npm run test-expenditure-analysis`
 */
-
-function calculateTotalSpentByCategory(transactions) {
+interface Transaction {
+itemName: string;
+category: string;
+price: number;
+timestamp: number;
+}
+export function calculateTotalSpentByCategory(transactions : Array<Transaction>) : Array<{category: string, totalSpent: number}> {
   const mapJS = {};
 
   for (const transaction of transactions) {
     const { category, price } = transaction;
 
-    if (category in mapJS) {
+    if (mapJS[category]) {
       mapJS[category] += price;
     } else {
       mapJS[category] = price;
@@ -30,4 +35,3 @@ function calculateTotalSpentByCategory(transactions) {
   return result;
 }
 
-module.exports = calculateTotalSpentByCategory;

@@ -7,7 +7,7 @@
   - `npm run test-anagram`
 */
 
-function isAnagram(str1, str2) {
+export function isAnagram(str1: string, str2: string) {
   str1 = str1.toLowerCase();
   str2 = str2.toLowerCase();
   if (str1.length !== str2.length) {
@@ -15,8 +15,9 @@ function isAnagram(str1, str2) {
   }
   const _str1 = str1.split("").sort().join("");
   const _str2 = str2.split("").sort().join("");
-
+  // console.log(_str1 === _str2);
   return _str1 === _str2;
 }
 
-module.exports = isAnagram;
+// isAnagram("naman", "gmmmm")
+

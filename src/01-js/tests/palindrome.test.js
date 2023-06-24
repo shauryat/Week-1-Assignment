@@ -1,4 +1,4 @@
-const isPalindrome = require("../medium/palindrome");
+const { isPalindrome } = require("../dist/01-js/medium/palindrome");
 
 describe("isPalindrome", () => {
   test("returns true for palindromes", () => {

@@ -1,4 +1,4 @@
-const isAnagram = require("../easy/anagram");
+const { isAnagram } = require("../dist/01-js/easy/anagram");
 
 describe("isAnagram", () => {
   test("returns true for anagrams", () => {

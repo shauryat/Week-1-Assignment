@@ -11,11 +11,15 @@ function transformString(str) {
 
   // Remove special characters and white spaces using regular expressions
   transformedStr = transformedStr.replace(/[^a-zA-Z0-9]/g, "");
+  /* /[^a-zA-Z0-9]/g: This is a regular expression pattern enclosed between two slashes. It represents any character that is not a letter (uppercase or lowercase) or a digit (0-9).
+[^a-zA-Z0-9]: The caret (^) inside the square brackets means "not." So, [^a-zA-Z0-9] matches any character that is not an uppercase letter, lowercase letter, or digit.
+/g: The 'g' flag stands for "global" and ensures that all matching occurrences in the string are replaced, not just the first one.
+*/
 
   return transformedStr;
 }
 
-function isPalindrome(str) {
+export function isPalindrome(str) {
   const final = transformString(str);
 
   const _str = final.split("").reverse().join("");
@@ -23,4 +27,3 @@ function isPalindrome(str) {
   return final === _str;
 }
 
-module.exports = isPalindrome;

@@ -7,14 +7,14 @@ Try running it for
 Hint - use Date class exposed in JS
 */
 
-function sum(n) {
+function sum(n : number) {
   let ans = 0;
 
   for (let i = 1; i <= n; i++) ans += i;
   return ans;
 }
 
-function timeTaken(n, callFn) {
+function timeTaken(n : number, sum : Function) {
   let start = Date.now();
   sum(n);
   let timeTaken = Date.now() - start; // ans in milliseconds
@@ -22,10 +22,11 @@ function timeTaken(n, callFn) {
 
   return timeTaken;
 }
-function calculateTime(n) {
+function calculateTime() {
   console.log(timeTaken(100, sum));
   console.log(timeTaken(100000, sum));
   console.log(timeTaken(1000000000, sum));
 }
 
 calculateTime();
+

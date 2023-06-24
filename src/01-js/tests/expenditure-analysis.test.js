@@ -1,4 +1,6 @@
-const calculateTotalSpentByCategory = require("../easy/expenditure-analysis");
+const {
+  calculateTotalSpentByCategory,
+} = require("../dist/01-js/easy/expenditure-analysis");
 
 describe("calculateTotalSpentByCategory", () => {
   test("returns the correct total spent for a single transaction", () => {
